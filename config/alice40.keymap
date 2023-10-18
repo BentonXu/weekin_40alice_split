@@ -4,22 +4,31 @@
 #include <dt-bindings/zmk/rgb.h>
 
 / {
+    macros {
+        pl: pl {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none &kp P &kp L &kp RET>;
+            label = "PL";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         Base_layer {
             label = "BASE";
             bindings = <
-&kp ESC       &kp Q       &kp W  &kp E  &kp R  &kp T        &kp Y        &kp U  &kp I   &kp O      &kp P          &kp BACKSPACE
-&kp CAPSLOCK  &kp A       &kp S  &kp D  &kp F  &kp G        &kp H        &kp J  &kp K   &kp L      &kp SEMICOLON  &kp ENTER
-&kp LSHIFT    &kp Z       &kp X  &kp C  &kp V  &kp B        &kp B        &kp N  &kp M   &kp COMMA  &kp DOT        &kp RSHIFT
-&kp LCTRL     &lt 2 RWIN         &sl 4         &lt 1 SPACE  &lt 2 SPACE  &mo 3  &kp UP  &kp DOWN   &kp LEFT       &kp RIGHT
+&kp ESC       &kp Q       &kp W  &kp E  &kp R  &kp T        &kp Y        &kp U  &kp I      &kp O       &kp P          &kp BACKSPACE
+&kp CAPSLOCK  &kp A       &kp S  &kp D  &kp F  &kp G        &kp H        &kp J  &kp K      &kp L       &kp SEMICOLON  &kp SQT
+&kp LSHIFT    &kp Z       &kp X  &kp C  &kp V  &kp B        &kp B        &kp N  &kp M      &kp COMMA   &kp DOT        &kp RSHIFT
+&kp LCTRL     &lt 2 RWIN         &sl 4         &lt 1 SPACE  &lt 2 SPACE  &mo 3  &kp SLASH  &kp C_MENU  &kp LEFT_ALT   &kp RCTRL
             >;
         };
 
         Number_layer {
             bindings = <
-&kp ESC       &kp N1    &kp N2     &kp N3        &kp N4     &kp N5   &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS  &kp EQUAL
+&kp TAB       &kp N1    &kp N2     &kp N3        &kp N4     &kp N5   &kp N7  &kp N8  &kp N9  &kp N0  &kp MINUS  &kp EQUAL
 &kp ENTER     &kp N6    &kp N7     &kp N8        &kp N9     &kp N0   &trans  &trans  &trans  &trans  &trans     &trans
 &kp KP_EQUAL  &kp PLUS  &kp MINUS  &kp ASTERISK  &kp SLASH  &kp DOT  &trans  &trans  &trans  &trans  &trans     &trans
 &trans        &trans               &trans                   &trans   &trans  &trans  &trans  &trans  &trans     &trans
@@ -52,7 +61,7 @@
 
         layer_4 {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &pl     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
