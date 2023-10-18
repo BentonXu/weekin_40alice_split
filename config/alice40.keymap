@@ -8,8 +8,74 @@
         pl: pl {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&none &kp P &kp L &kp RET>;
+            bindings = <&kp P &kp L &kp RET>;
             label = "PL";
+        };
+        o: o {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp O &kp RET>;
+            label = "O";
+        };
+        move: move {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp RET>;
+            label = "MOVE";
+        };
+        ma: ma {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp A &kp RET>;
+            label = "MA";
+        };
+        rotate: rotate {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp O &kp RET>;
+            label = "ROTATE";
+        };
+        wzs: wzs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp W &kp Z &kp S &kp RET>;
+            label = "WZS";
+        };
+        zs: zs {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp Z &kp S &kp RET>;
+            label = "ZS";
+        };
+        di: di {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp D &kp I &kp RET>;
+            label = "DI";
+        };
+        pan: pan {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp P &kp RET>;
+            label = "PAN";
+        };
+        mirror: mirror {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp M &kp I &kp RET>;
+            label = "MIRROR";
+        };
+        refedit: refedit {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp E &kp F &kp E &kp D &kp I &kp T &kp RET>;
+            label = "REFEDIT";
+        };
+        refclose: refclose {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp R &kp E &kp F &kp C &kp L &kp O &kp S &kp E &kp RET>;
+            label = "REFCLOSE";
         };
     };
 
@@ -50,10 +116,10 @@
 
         Function_layer {
             bindings = <
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &trans  &trans           &trans           &trans           &trans
-&trans  &trans        &trans        &trans        &trans        &trans        &trans  &trans  &trans           &trans           &trans           &rgb_ug RGB_TOG
-&trans  &trans        &trans        &bt BT_CLR    &trans        &trans        &trans  &trans  &trans           &trans           &trans           &trans
-&trans  &trans                      &trans                      &trans        &trans  &trans  &rgb_ug RGB_BRI  &rgb_ug RGB_BRD  &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
+&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &trans  &kp C_VOLUME_UP  &kp UP_ARROW     &kp C_VOLUME_DOWN  &trans           &trans
+&trans  &trans        &trans        &trans        &trans        &trans        &trans  &kp LEFT         &kp DOWN         &kp RIGHT          &trans           &rgb_ug RGB_TOG
+&trans  &trans        &trans        &bt BT_CLR    &trans        &trans        &trans  &trans           &trans           &trans             &trans           &trans
+&trans  &trans                      &trans                      &trans        &trans  &trans           &rgb_ug RGB_BRI  &rgb_ug RGB_BRD    &rgb_ug RGB_EFR  &rgb_ug RGB_EFF
             >;
 
             label = "Function";
@@ -61,10 +127,10 @@
 
         layer_4 {
             bindings = <
-&trans  &pl     &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans          &trans          &trans  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &pl       &o         &move   &ma     &rotate  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &wzs      &zs        &di     &pan    &mirror  &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &refedit  &refclose  &kp F8  &kp F3  &trans   &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans               &trans          &trans   &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
