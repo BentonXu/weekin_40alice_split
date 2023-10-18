@@ -127,10 +127,10 @@
 
         layer_4 {
             bindings = <
-&trans  &pl       &o         &move   &ma     &rotate  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &wzs      &zs        &di     &pan    &mirror  &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &refedit  &refclose  &kp F8  &kp F3  &trans   &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans               &trans          &trans   &trans  &trans  &trans  &trans  &trans  &trans
+&kp TAB  &pl       &o         &move   &ma     &rotate  &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &wzs      &zs        &di     &pan    &mirror  &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &refedit  &refclose  &kp F8  &kp F3  &trans   &trans  &trans  &trans  &trans  &trans  &trans
+&trans   &trans               &trans          &trans   &trans  &trans  &trans  &trans  &trans  &trans
             >;
         };
     };
